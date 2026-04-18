@@ -20,6 +20,7 @@ Mem0 can use Ollama as an open-model provider. To enable Ollama, set the followi
 - `MEM0_OPEN_MODEL_BASE_URL` (example: `http://host.docker.internal:11434`)
 - `MEM0_LLM_MODEL` (example: `qwen2.5:7b`)
 - `MEM0_EMBEDDER_MODEL` (example: `nomic-embed-text-v2-moe:latest`)
+- `MEM0_EMBEDDER_DIMENSION` (example: `768`)
 
 Restart the server after updating environment variables.
 

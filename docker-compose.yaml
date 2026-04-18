@@ -30,6 +30,7 @@ services:
       - MEM0_OPEN_MODEL_PROVIDER=ollama
       - MEM0_LLM_MODEL=qwen2.5:7b
       - MEM0_EMBEDDER_MODEL=nomic-embed-text-v2-moe:latest
+      - MEM0_EMBEDDER_DIMENSION=768
       - MEM0_OPEN_MODEL_BASE_URL=http://host.docker.internal:11434
 
   postgres:

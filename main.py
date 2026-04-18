@@ -56,6 +56,7 @@ OPEN_MODEL_PROVIDER = os.environ.get("MEM0_OPEN_MODEL_PROVIDER", "openai")
 LLM_MODEL = os.environ.get("MEM0_LLM_MODEL", "gpt-4.1-nano-2025-04-14")
 EMBEDDER_MODEL = os.environ.get("MEM0_EMBEDDER_MODEL", "text-embedding-3-small")
 OPEN_MODEL_BASE_URL = os.environ.get("MEM0_OPEN_MODEL_BASE_URL")
+EMBEDDER_DIMENSION = int(os.environ.get("MEM0_EMBEDDER_DIMENSION", "1536"))  # Default to 1536 for default openai text-embedding-3-small
 
 # Build embedder config depending on provider
 if OPEN_MODEL_PROVIDER.lower() == "ollama":
@@ -76,7 +77,7 @@ DEFAULT_CONFIG = {
             "user": POSTGRES_USER,
             "password": POSTGRES_PASSWORD,
             "collection_name": POSTGRES_COLLECTION_NAME,
-            "embedding_model_dims": 768,  # This should match the dimension of the embedder model
+            "embedding_model_dims": EMBEDDER_DIMENSION,  # This should match the dimension of the embedder model
         },
     },
     "graph_store": {
